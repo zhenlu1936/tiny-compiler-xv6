@@ -25,3 +25,5 @@ scripts/riscv_gen.sh（可选）使用gcc生成.s并使用gcc生成.o
 scripts/riscv_my_gen.sh     使用本编译器生成.s并使用gcc生成.o
 
 scripts/riscv_gdb.sh 1/0    若为1则使用qemu执行.o并转发端口使用gdb调试以便观察执行结果；若未0则直接运行
+
+scripts/run_in_xv6.sh       使用本编译器生成 .s ，拷贝到 xv6 源码目录之后和 xv6 源代码一起生成 .o 文件，按照 xv6 的 user 程序规则链接。
