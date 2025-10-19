@@ -286,14 +286,14 @@ void asm_stack_pivot(struct tac *code) {
 		perror("Stack out of memory!");
 	}
 	input_str(obj_file, "	addi sp,sp,-%d\n", oon);
-	input_str(obj_file, "	sw ra,%d(sp)\n", oon - 8);
-	input_str(obj_file, "	sw s0,%d(sp)\n", oon - 16);
+	input_str(obj_file, "	sd ra,%d(sp)\n", oon - 8);
+	input_str(obj_file, "	sd s0,%d(sp)\n", oon - 16);
 	input_str(obj_file, "	addi s0,sp,%d\n", oon);
 }
 
 void asm_stack_restore() {
-	input_str(obj_file, "	lw ra,%d(sp)\n", oon - 8);
-	input_str(obj_file, "	lw s0,%d(sp)\n", oon - 16);
+	input_str(obj_file, "	ld ra,%d(sp)\n", oon - 8);
+	input_str(obj_file, "	ld s0,%d(sp)\n", oon - 16);
 	input_str(obj_file, "	addi sp,sp,%d\n", oon);
 	input_str(obj_file, "	jr ra\n");
 }
