@@ -1,0 +1,2 @@
+riscv64-unknown-elf-gcc -march=rv32im -mabi=ilp32 -O0 ./examples/test.c -S -o ./examples/test_t.s -fPIC
+riscv64-unknown-elf-gcc -march=rv32im -mabi=ilp32 -O0 ./examples/test.c -o ./examples/test.o -fPIC

@@ -1,0 +1,18 @@
+# output
+build/
+tac.txt*
+examples/*.x
+examples/*.s
+examples/*.o
+*.patch
+.gdb_history
+
+# reference from ysj
+object/
+mini/
+
+# hjj's own
+.vscode/
+e.dSYM/
+homework*
+.clangd
