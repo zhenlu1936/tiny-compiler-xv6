@@ -667,7 +667,7 @@ struct op *param_args_type_casting(struct tac *func_param,
 	struct tac *arg = args_list->code;
 	// 反向遍历 func_param
 	struct tac *param = func_param;
-	while (param && param->next->type == TAC_PARAM) {
+	while (param && param->next && param->next->type == TAC_PARAM) {
 		param = param->next;  // 移动到 func_param 的末尾
 	}
 

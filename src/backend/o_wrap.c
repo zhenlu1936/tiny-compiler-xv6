@@ -116,15 +116,9 @@ void asm_code(struct tac *code) {
 			asm_param(code);
 			return;
 
-		case TAC_END:
-			asm_stack_restore();
-			scope = GLOBAL_TABLE;
-			return;
-
 		case TAC_VAR:
 			if (scope == LOCAL_TABLE) {
 				LOCAL_VAR_OFFSET(id_1, tof, id_1->array_info);
-
 			} else {
 				asm_gvar(id_1);
 			}
@@ -132,6 +126,9 @@ void asm_code(struct tac *code) {
 
 		case TAC_RETURN:
 			asm_return(id_1);
+		case TAC_END:
+			asm_stack_restore();
+			if (code->type == TAC_END) scope = GLOBAL_TABLE;
 			return;
 
 		default:
